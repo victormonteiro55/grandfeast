@@ -71,9 +71,9 @@ function ContactPage() {
           <MapPin className="w-8 h-8 text-gold mb-4" />
           <h3 className="font-display text-2xl mb-3">Find us</h3>
           <p className="text-muted-foreground leading-relaxed">
-            14 Rue des Lumières<br />
-            Old Quarter, 75004<br />
-            Paris, France
+            245 Park Avenue<br />
+            Manhattan, NY 10167<br />
+            New York, United States
           </p>
         </div>
 
