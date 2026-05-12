@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import pastaImg from "@/assets/dish-pasta.jpg";
 import steakImg from "@/assets/dish-steak.jpg";
 import dessertImg from "@/assets/dish-dessert.jpg";
@@ -153,6 +153,24 @@ type Filter = (typeof FILTERS)[number];
 function VirtualMenuPage() {
   const [filter, setFilter] = useState<Filter>("All");
   const items = ITEMS.filter((i) => filter === "All" || i.category === filter);
+
+  // Re-trigger Google Translate after every re-render so newly mounted
+  // text nodes (filter changes, item swaps) get translated to the active language.
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const m = document.cookie.match(/googtrans=\/[a-z-]+\/([a-z-]+)/i);
+    const lang = m?.[1];
+    if (!lang || lang === "en") return;
+    const trigger = () => {
+      const select = document.querySelector<HTMLSelectElement>(".goog-te-combo");
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event("change"));
+      }
+    };
+    const t = setTimeout(trigger, 80);
+    return () => clearTimeout(t);
+  }, [filter]);
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-24">
