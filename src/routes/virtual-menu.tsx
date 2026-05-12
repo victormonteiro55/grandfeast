@@ -220,7 +220,7 @@ function VirtualMenuPage() {
                 {item.desc}
               </p>
               <div className="mt-4 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-                {item.category}
+                <span translate="yes">{item.category}</span>
               </div>
             </div>
           </article>
