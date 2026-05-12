@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VirtualMenuRouteImport } from './routes/virtual-menu'
 import { Route as RecipesRouteImport } from './routes/recipes'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VirtualMenuRoute = VirtualMenuRouteImport.update({
+  id: '/virtual-menu',
+  path: '/virtual-menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RecipesRoute = RecipesRouteImport.update({
   id: '/recipes',
   path: '/recipes',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
   '/recipes': typeof RecipesRoute
+  '/virtual-menu': typeof VirtualMenuRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
   '/recipes': typeof RecipesRoute
+  '/virtual-menu': typeof VirtualMenuRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
   '/recipes': typeof RecipesRoute
+  '/virtual-menu': typeof VirtualMenuRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/menu' | '/recipes'
+  fullPaths: '/' | '/contact' | '/menu' | '/recipes' | '/virtual-menu'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/menu' | '/recipes'
-  id: '__root__' | '/' | '/contact' | '/menu' | '/recipes'
+  to: '/' | '/contact' | '/menu' | '/recipes' | '/virtual-menu'
+  id: '__root__' | '/' | '/contact' | '/menu' | '/recipes' | '/virtual-menu'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +76,18 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   MenuRoute: typeof MenuRoute
   RecipesRoute: typeof RecipesRoute
+  VirtualMenuRoute: typeof VirtualMenuRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/virtual-menu': {
+      id: '/virtual-menu'
+      path: '/virtual-menu'
+      fullPath: '/virtual-menu'
+      preLoaderRoute: typeof VirtualMenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/recipes': {
       id: '/recipes'
       path: '/recipes'
@@ -107,7 +124,18 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   MenuRoute: MenuRoute,
   RecipesRoute: RecipesRoute,
+  VirtualMenuRoute: VirtualMenuRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
