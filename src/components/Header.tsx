@@ -217,6 +217,9 @@ export function Header() {
             <Link to="/menu" activeProps={{ className: "text-gold" }} className="hover:text-gold transition-colors">
               Menu
             </Link>
+            <Link to="/virtual-menu" activeProps={{ className: "text-gold" }} className="hover:text-gold transition-colors">
+              Virtual
+            </Link>
             <Link to="/recipes" activeProps={{ className: "text-gold" }} className="hover:text-gold transition-colors">
               Recipes
             </Link>
