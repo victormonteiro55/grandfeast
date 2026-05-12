@@ -3,16 +3,25 @@ import { useState } from "react";
 import pastaImg from "@/assets/dish-pasta.jpg";
 import steakImg from "@/assets/dish-steak.jpg";
 import dessertImg from "@/assets/dish-dessert.jpg";
-import heroImg from "@/assets/hero.jpg";
+import seabassImg from "@/assets/dish-seabass.jpg";
+import duckImg from "@/assets/dish-duck.jpg";
+import burrataImg from "@/assets/dish-burrata.jpg";
+import wellingtonImg from "@/assets/dish-wellington.jpg";
+import negroniImg from "@/assets/drink-negroni.jpg";
+import oldFashionedImg from "@/assets/drink-oldfashioned.jpg";
+import champagneImg from "@/assets/drink-champagne.jpg";
+import baroloImg from "@/assets/drink-barolo.jpg";
+import waterImg from "@/assets/drink-water.jpg";
+import espressoImg from "@/assets/drink-espresso.jpg";
 
 export const Route = createFileRoute("/virtual-menu")({
   head: () => ({
     meta: [
-      { title: "Virtual Menu — Maison Noir" },
+      { title: "Cardapio — Maison Noir" },
       {
         name: "description",
         content:
-          "Browse our interactive virtual menu with foods, drinks and prices in US Dollars.",
+          "Browse our interactive menu with foods, drinks and prices.",
       },
     ],
   }),
@@ -49,28 +58,28 @@ const ITEMS: Item[] = [
     name: "Atlantic Sea Bass",
     desc: "Saffron beurre blanc, fennel, Castelvetrano olives",
     price: 44,
-    img: heroImg,
+    img: seabassImg,
     category: "Food",
   },
   {
     name: "Confit Duck Leg",
     desc: "Cherry gastrique, parsnip purée, crispy sage",
     price: 42,
-    img: steakImg,
+    img: duckImg,
     category: "Food",
   },
   {
     name: "Burrata della Casa",
     desc: "Fig confit, aged balsamic, toasted hazelnut",
     price: 22,
-    img: pastaImg,
+    img: burrataImg,
     category: "Food",
   },
   {
     name: "Wild Mushroom Wellington",
     desc: "Spinach, chestnut, madeira reduction",
     price: 36,
-    img: heroImg,
+    img: wellingtonImg,
     category: "Food",
     tag: "Vegetarian",
   },
@@ -94,7 +103,7 @@ const ITEMS: Item[] = [
     name: "Maison Negroni",
     desc: "House-infused gin, rosso vermouth, orange bitters",
     price: 18,
-    img: heroImg,
+    img: negroniImg,
     category: "Drink",
     tag: "Cocktail",
   },
@@ -102,7 +111,7 @@ const ITEMS: Item[] = [
     name: "Smoked Old Fashioned",
     desc: "Bourbon, demerara, applewood smoke",
     price: 20,
-    img: heroImg,
+    img: oldFashionedImg,
     category: "Drink",
     tag: "Cocktail",
   },
@@ -110,7 +119,7 @@ const ITEMS: Item[] = [
     name: "Champagne Rosé · Glass",
     desc: "Laurent-Perrier Cuvée, France",
     price: 28,
-    img: heroImg,
+    img: champagneImg,
     category: "Drink",
     tag: "Wine",
   },
@@ -118,7 +127,7 @@ const ITEMS: Item[] = [
     name: "Barolo DOCG · Bottle",
     desc: "Nebbiolo, Piedmont, Italy 2019",
     price: 140,
-    img: heroImg,
+    img: baroloImg,
     category: "Drink",
     tag: "Wine",
   },
@@ -126,14 +135,14 @@ const ITEMS: Item[] = [
     name: "Sparkling Water · 750ml",
     desc: "Acqua Panna or San Pellegrino",
     price: 8,
-    img: heroImg,
+    img: waterImg,
     category: "Drink",
   },
   {
     name: "Espresso",
     desc: "Single-origin Ethiopian, hand-pulled",
     price: 5,
-    img: heroImg,
+    img: espressoImg,
     category: "Drink",
   },
 ];
@@ -152,10 +161,10 @@ function VirtualMenuPage() {
           Interactive Experience
         </p>
         <h1 className="font-display text-6xl md:text-8xl text-gradient-gold">
-          Virtual Menu
+          Cardapio
         </h1>
         <p className="mt-6 text-muted-foreground max-w-xl mx-auto">
-          Browse our foods and drinks with real-time pricing in US Dollars.
+          Browse our foods and drinks with real-time pricing.
         </p>
       </div>
 
@@ -194,20 +203,24 @@ function VirtualMenuPage() {
                   {item.tag}
                 </span>
               )}
-              <span className="absolute bottom-4 right-4 font-display text-3xl text-gold drop-shadow-lg">
-                ${item.price}
+              <span className="absolute bottom-4 left-4 right-4 font-display text-2xl text-white drop-shadow-lg">
+                {item.name}
               </span>
             </div>
             <div className="p-6">
-              <h3 className="font-display text-2xl text-foreground group-hover:text-gold transition-colors">
-                {item.name}
-              </h3>
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="font-display text-2xl text-foreground group-hover:text-gold transition-colors">
+                  {item.name}
+                </h3>
+                <span className="font-display text-2xl text-gold whitespace-nowrap notranslate">
+                  ${item.price}
+                </span>
+              </div>
               <p className="mt-2 text-sm text-muted-foreground italic leading-relaxed">
                 {item.desc}
               </p>
-              <div className="mt-4 flex items-center justify-between text-[10px] uppercase tracking-[0.3em]">
-                <span className="text-muted-foreground">{item.category}</span>
-                <span className="text-gold">USD</span>
+              <div className="mt-4 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+                {item.category}
               </div>
             </div>
           </article>
@@ -215,7 +228,7 @@ function VirtualMenuPage() {
       </div>
 
       <p className="text-center text-xs uppercase tracking-[0.3em] text-muted-foreground mt-16">
-        All prices in US Dollars · Service charge included
+        Service charge included
       </p>
     </div>
   );
