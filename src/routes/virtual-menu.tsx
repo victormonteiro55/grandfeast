@@ -179,7 +179,7 @@ function VirtualMenuPage() {
                 : "border-border text-muted-foreground hover:border-gold hover:text-gold"
             }`}
           >
-            {f}
+            <span translate="yes">{f}</span>
           </button>
         ))}
       </div>
