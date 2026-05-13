@@ -6,7 +6,7 @@ import dessertImg from "@/assets/dish-dessert.jpg";
 export const Route = createFileRoute("/menu")({
   head: () => ({
     meta: [
-      { title: "Menu — Maison Noir" },
+      { title: "Menu — Grand Feast" },
       { name: "description", content: "A seasonal menu of starters, mains, desserts and a curated drinks list. Each dish crafted with intention." },
     ],
   }),

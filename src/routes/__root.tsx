@@ -74,9 +74,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Maison Noir — Fine Dining Restaurant" },
+      { title: "Grand Feast — Fine Dining Restaurant" },
       { name: "description", content: "An elegant fine dining experience. Discover our curated menu, signature recipes, and timeless atmosphere." },
-      { property: "og:title", content: "Maison Noir — Fine Dining Restaurant" },
+      { property: "og:title", content: "Grand Feast — Fine Dining Restaurant" },
       { property: "og:description", content: "An elegant fine dining experience." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

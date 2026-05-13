@@ -17,7 +17,7 @@ import espressoImg from "@/assets/drink-espresso.jpg";
 export const Route = createFileRoute("/virtual-menu")({
   head: () => ({
     meta: [
-      { title: "Cardapio — Maison Noir" },
+      { title: "Cardapio — Grand Feast" },
       {
         name: "description",
         content:
