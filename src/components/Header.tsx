@@ -213,10 +213,10 @@ export function Header() {
         <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group notranslate">
             <span className="font-display text-2xl tracking-wider text-gradient-gold">
-              MAISON
+              GRAND
             </span>
             <span className="font-display text-2xl tracking-wider text-foreground">
-              NOIR
+              FEAST
             </span>
           </Link>
 

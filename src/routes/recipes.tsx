@@ -7,8 +7,8 @@ import dessertImg from "@/assets/dish-dessert.jpg";
 export const Route = createFileRoute("/recipes")({
   head: () => ({
     meta: [
-      { title: "Recipes — Maison Noir" },
-      { name: "description", content: "Step into our kitchen. Recreate signature Maison Noir dishes at home with the chef's own recipes." },
+      { title: "Recipes — Grand Feast" },
+      { name: "description", content: "Step into our kitchen. Recreate signature Grand Feast dishes at home with the chef's own recipes." },
     ],
   }),
   component: RecipesPage,

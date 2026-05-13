@@ -4,7 +4,7 @@ import { Instagram, Mail, MessageCircle, MapPin, Clock } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Maison Noir" },
+      { title: "Contact — Grand Feast" },
       { name: "description", content: "Reserve a table, ask about private events, or just say hello. We'd love to hear from you." },
     ],
   }),
@@ -26,23 +26,23 @@ function ContactPage() {
       <div className="text-center mb-24 p-12 rounded-2xl bg-card/40 border border-border">
         <p className="text-xs uppercase tracking-[0.4em] text-gold mb-6">Email us anytime</p>
         <a
-          href="mailto:hello@maisonnoir.com"
+          href="mailto:hello@grandfeast.com"
           className="block font-display text-5xl md:text-7xl lg:text-8xl text-gradient-gold hover:scale-[1.02] transition-transform break-all"
         >
-          hello@maisonnoir.com
+          hello@grandfeast.com
         </a>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6 mb-16">
         <a
-          href="https://instagram.com/maisonnoir"
+          href="https://instagram.com/grandfeast"
           target="_blank"
           rel="noopener noreferrer"
           className="group p-8 rounded-xl bg-card/40 border border-border hover:border-gold transition-all text-center"
         >
           <Instagram className="w-10 h-10 text-gold mx-auto mb-4 group-hover:scale-110 transition-transform" />
           <h3 className="font-display text-2xl mb-2">Instagram</h3>
-          <p className="text-muted-foreground">@maisonnoir</p>
+          <p className="text-muted-foreground">@grandfeast</p>
         </a>
 
         <a
@@ -57,12 +57,12 @@ function ContactPage() {
         </a>
 
         <a
-          href="mailto:hello@maisonnoir.com"
+          href="mailto:hello@grandfeast.com"
           className="group p-8 rounded-xl bg-card/40 border border-border hover:border-gold transition-all text-center"
         >
           <Mail className="w-10 h-10 text-gold mx-auto mb-4 group-hover:scale-110 transition-transform" />
           <h3 className="font-display text-2xl mb-2">Email</h3>
-          <p className="text-muted-foreground">hello@maisonnoir.com</p>
+          <p className="text-muted-foreground">hello@grandfeast.com</p>
         </a>
       </div>
 

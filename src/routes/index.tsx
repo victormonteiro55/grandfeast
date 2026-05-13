@@ -7,7 +7,7 @@ import dessertImg from "@/assets/dish-dessert.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Maison Noir — Fine Dining Restaurant" },
+      { title: "Grand Feast — Fine Dining Restaurant" },
       { name: "description", content: "Where cuisine meets craft. Discover signature dishes, timeless atmosphere, and an unforgettable dining experience." },
     ],
   }),
@@ -66,7 +66,7 @@ function Index() {
             </h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed text-lg">
               <p>
-                Tucked into a quiet corner of the old quarter, Maison Noir was born from a
+                Tucked into a quiet corner of the old quarter, Grand Feast was born from a
                 simple conviction: that a meal should feel like a moment suspended in time.
               </p>
               <p>

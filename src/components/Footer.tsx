@@ -9,22 +9,22 @@ export function Footer() {
             Get in touch
           </p>
           <a
-            href="mailto:hello@maisonnoir.com"
+            href="mailto:hello@grandfeast.com"
             className="block font-display text-4xl md:text-6xl lg:text-7xl text-gradient-gold hover:scale-[1.02] transition-transform break-all"
           >
-            hello@maisonnoir.com
+            hello@grandfeast.com
           </a>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <a
-            href="https://instagram.com/maisonnoir"
+            href="https://instagram.com/grandfeast"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 px-6 py-3 rounded-full border border-border hover:border-gold hover:bg-card transition-all group"
           >
             <Instagram className="w-5 h-5 text-gold" />
-            <span className="text-sm">@maisonnoir</span>
+            <span className="text-sm">@grandfeast</span>
           </a>
           <a
             href="https://wa.me/15551234567"
@@ -36,7 +36,7 @@ export function Footer() {
             <span className="text-sm">+1 (555) 123-4567</span>
           </a>
           <a
-            href="mailto:hello@maisonnoir.com"
+            href="mailto:hello@grandfeast.com"
             className="flex items-center gap-3 px-6 py-3 rounded-full border border-border hover:border-gold hover:bg-card transition-all"
           >
             <Mail className="w-5 h-5 text-gold" />
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
 
         <div className="text-center text-xs text-muted-foreground tracking-widest uppercase">
-          © {new Date().getFullYear()} Maison Noir · Crafted with passion
+          © {new Date().getFullYear()} Grand Feast · Crafted with passion
         </div>
       </div>
     </footer>
