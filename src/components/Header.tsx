@@ -174,7 +174,17 @@ export function Header() {
     const next = e.target.value;
     setLang(next);
     setTranslateCookie(next);
-    window.location.reload();
+    // Trigger Google Translate combo immediately (no reload, so cookie isn't lost)
+    const tryApply = (attempt = 0) => {
+      const combo = document.querySelector<HTMLSelectElement>(".goog-te-combo");
+      if (combo) {
+        combo.value = next;
+        combo.dispatchEvent(new Event("change"));
+        return;
+      }
+      if (attempt < 20) setTimeout(() => tryApply(attempt + 1), 150);
+    };
+    tryApply();
   };
 
   return (
